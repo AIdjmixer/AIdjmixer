@@ -33,7 +33,7 @@ interface PageInfo {
 const PAGE_CONTENT: Record<string, PageInfo> = {
     about: {
         title: 'About AI DJ Mixer',
-        content: <p>This application automatically mixes your songs like a real DJ. Upload your tracks, and enjoy a seamless mix, if you want to play a particular song to be played in full, just tick the box, also multiple playlists can be created.</p>
+        content: <p>This application automatically mixes your songs like a real DJ. Upload your tracks, and enjoy a seamless mix. By default, songs are crossfaded after a short snippet, but you can choose to play any song in its entirety.</p>
     },
     contact: {
         title: 'Contact Us',
