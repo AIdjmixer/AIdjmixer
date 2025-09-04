@@ -1,4 +1,7 @@
-
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+*/
 import './index.css';
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { createRoot } from 'react-dom/client';
@@ -233,13 +236,16 @@ const App: React.FC = () => {
 
         if (savedPlaylists) {
             try {
-                const parsedPlaylists: Playlist[] = JSON.parse(savedPlaylists);
+                // Playlists are saved without songs, as File objects cannot be persisted.
+                // We rehydrate them here with empty song arrays.
+                const parsedPlaylists: Omit<Playlist, 'songs'>[] = JSON.parse(savedPlaylists);
                 if (Array.isArray(parsedPlaylists)) {
-                    setPlaylists(parsedPlaylists);
-                    if (savedActiveId && parsedPlaylists.some(p => p.id === savedActiveId)) {
+                    const rehydratedPlaylists = parsedPlaylists.map(p => ({ ...p, songs: [] as Song[] }));
+                    setPlaylists(rehydratedPlaylists);
+                    if (savedActiveId && rehydratedPlaylists.some(p => p.id === savedActiveId)) {
                         setActivePlaylistId(savedActiveId);
-                    } else if (parsedPlaylists.length > 0) {
-                        setActivePlaylistId(parsedPlaylists[0].id);
+                    } else if (rehydratedPlaylists.length > 0) {
+                        setActivePlaylistId(rehydratedPlaylists[0].id);
                     }
                 }
             } catch (error) {
@@ -256,7 +262,12 @@ const App: React.FC = () => {
 
     // Save data to localStorage
     useEffect(() => {
-        if (playlists.length > 0) localStorage.setItem('playlists', JSON.stringify(playlists));
+        if (playlists.length > 0) {
+            // Do not store the 'songs' array because File objects are not serializable.
+            // We only persist the playlist structure (name and id).
+            const playlistsToSave = playlists.map(({ id, name }) => ({ id, name }));
+            localStorage.setItem('playlists', JSON.stringify(playlistsToSave));
+        }
         if (activePlaylistId) localStorage.setItem('activePlaylistId', activePlaylistId);
         localStorage.setItem('isShuffle', String(isShuffle));
     }, [playlists, activePlaylistId, isShuffle]);
