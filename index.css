@@ -1,13 +1,14 @@
 
 :root {
-    --primary-bg: #0D0D0D;
+    --primary-bg: #000000;
     --secondary-bg: #1a1a1a;
     --tertiary-bg: #2c2c2c;
-    --accent-color: #FF00FF; /* Magenta */
-    --highlight-color: #00FFFF; /* Cyan */
-    --text-color: #f0f0f0;
-    --text-muted: #a0a0f0;
-    --border-color: #333;
+    --gold-gradient: linear-gradient(90deg, #fceabb, #f8b500, #c38300);
+    --font-color-gold: #a38c5b;
+    --font-color-secondary-gold: #a38c5b;
+    --border-color: #4a3c1d;
+    --text-color: var(--font-color-gold);
+    --text-muted: var(--font-color-secondary-gold);
 }
 
 * {
@@ -164,7 +165,7 @@ h2 {
     display: block;
     padding: 0.75rem 1rem;
     background-color: var(--accent-color);
-    color: #fff;
+    color: #a38c5b;
     border-radius: 4px;
     text-align: center;
     cursor: pointer;
@@ -173,7 +174,7 @@ h2 {
 }
 
 .file-input-label:hover {
-    background-color: #e000e0;
+    background-color: #1a1a1a;
     box-shadow: 0 0 10px var(--accent-color);
 }
 
@@ -286,7 +287,7 @@ h2 {
 
 .progress-bar {
     height: 100%;
-    background-color: var(--accent-color);
+    background-color: #a38c5b;
     border-radius: 3px;
     transition: width 0.25s linear;
     box-shadow: 0 0 8px var(--accent-color);
@@ -333,7 +334,7 @@ h2 {
     box-shadow: 0 0 12px var(--accent-color);
 }
 .control-btn.play-pause:not(:disabled):hover {
-    background-color: #e000e0;
+    background-color: #1a1a1a;
 }
 .control-btn.play-pause svg {
     width: 30px;

@@ -574,7 +574,7 @@ const App: React.FC = () => {
     return (
         <div className="app-container">
             <header className="app-header">
-                <h1>AI DJ Mixer</h1>
+                <h1>AI MIX DJ</h1>
                 <nav>
                     <a onClick={() => setCurrentPage('home')}>Home</a>
                     <a onClick={() => setCurrentPage('about')}>About</a>
