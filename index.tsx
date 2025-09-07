@@ -677,7 +677,7 @@ const App: React.FC = () => {
                     <a onClick={() => setViewingLegalDoc(TERMS_CONTENT)}>Terms of Service</a>
                     <a onClick={() => setViewingLegalDoc(PRIVACY_POLICY_CONTENT)}>Privacy Policy</a>
                 </div>
-                <p className="copyright-notice">© {new Date().getFullYear()} AI DJ Mixer. All Rights Reserved.</p>
+                <p className="copyright-notice">© {new Date().getFullYear()} AI Mix DJ. All Rights Reserved.</p>
             </footer>
             
             {isCreatingPlaylist && <CreatePlaylistModal onClose={() => setIsCreatingPlaylist(false)} onCreate={handleCreatePlaylist} />}
