@@ -35,8 +35,8 @@ interface PageInfo {
 
 const PAGE_CONTENT: Record<string, PageInfo> = {
     about: {
-        title: 'About AI DJ Mixer',
-        content: <p>This application automatically mixes your songs like a real DJ. Upload your tracks, and enjoy a seamless mix. By default, songs are crossfaded after a short snippet, but you can choose to play any song in its entirety.</p>
+        title: 'About AI Mix Dj',
+        content: <p>This application automatically mixes your songs like a real DJ. Upload your tracks, and enjoy a seamless mix. you can also choose to play any song in full, just tick the checkbox, those songs will be played in full along with mixed one's.</p>
     },
     contact: {
         title: 'Contact Us',
@@ -57,7 +57,7 @@ const PRIVACY_POLICY_CONTENT: PageInfo = {
     title: 'Privacy Policy',
     content: <>
         <p><strong>Last Updated: {new Date().toLocaleDateString()}</strong></p>
-        <p>Your privacy is important to us. It is AI DJ Mixer's policy to respect your privacy regarding any information we may collect from you across our website.</p>
+        <p>Your privacy is important to us. It is AI Mix Dj's policy to respect your privacy regarding any information we may collect from you across our website.</p>
         <h4>1. Information We Collect</h4>
         <p>We do not collect, store, or transmit any personal information or audio files. All audio processing is performed locally within your browser (client-side). The music files you select never leave your computer.</p>
         <h4>2. Local Storage</h4>
@@ -72,7 +72,7 @@ const PRIVACY_POLICY_CONTENT: PageInfo = {
 const TERMS_CONTENT: PageInfo = {
     title: 'Terms of Service',
     content: <>
-        <p>Please read these Terms of Service ("Terms") carefully before using the AI DJ Mixer application (the "Service").</p>
+        <p>Please read these Terms of Service ("Terms") carefully before using the AI Mix Dj application (the "Service").</p>
         <p>Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users, and others who access or use the Service.</p>
         <h4>1. Description of Service</h4>
         <p>The Service is a web-based application that allows users to select local audio files and have them mixed and played back in a continuous sequence. All processing occurs locally in the user's browser.</p>
@@ -81,18 +81,18 @@ const TERMS_CONTENT: PageInfo = {
         <h4>3. Copyright Policy</h4>
         <p>You retain all ownership rights to the audio files you use with the Service ("Your Content"). We do not claim any ownership over Your Content.</p>
         <p>By using the Service, you represent and warrant that you own or have the necessary licenses, rights, consents, and permissions to use and authorize the Service to process Your Content for personal, non-commercial playback. You agree that you will not use the Service with any content for which you do not have the proper authorization.</p>
-        <p>The Service processes files locally in your browser and does not upload, store, or distribute Your Content. You agree to indemnify and hold harmless AI DJ Mixer and its developers from any and all claims, damages, losses, liabilities, and expenses (including attorneys' fees) arising from your breach of these copyright terms.</p>
+        <p>The Service processes files locally in your browser and does not upload, store, or distribute Your Content. You agree to indemnify and hold harmless AI Mix Dj and its developers from any and all claims, damages, losses, liabilities, and expenses (including attorneys' fees) arising from your breach of these copyright terms.</p>
         <h4>4. Disclaimer of Warranties</h4>
         <p>The Service is provided on an "AS IS" and "AS AVAILABLE" basis. We make no warranties, expressed or implied, regarding the operation or availability of the Service, and hereby disclaim all other warranties, including without limitation, implied warranties of merchantability or fitness for a particular purpose.</p>
         <h4>5. Limitation of Liability</h4>
-        <p>In no event shall AI DJ Mixer or its developers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the Service.</p>
+        <p>In no event shall AI Mix Dj or its developers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the Service.</p>
         <h4>6. License and Use Restrictions</h4>
-        <p>The Service and its original code, features, and functionality are and will remain the exclusive property of AI DJ Mixer. The Service is protected by copyright and other intellectual property laws.</p>
+        <p>The Service and its original code, features, and functionality are and will remain the exclusive property of AI Mix Dj. The Service is protected by copyright and other intellectual property laws.</p>
         <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use the Service for your personal, non-commercial purposes, subject to these Terms. You agree not to, and you will not permit others to:</p>
         <ul style={{ paddingLeft: '20px', marginBottom: '1rem' }}>
             <li>License, sell, rent, lease, assign, distribute, transmit, or otherwise commercially exploit the Service.</li>
             <li>Copy, modify, decompile, reverse compile, disassemble, or reverse engineer any part of the Service.</li>
-            <li>Remove, alter or obscure any proprietary notice (including any notice of copyright) of AI DJ Mixer.</li>
+            <li>Remove, alter or obscure any proprietary notice (including any notice of copyright) of AI Mix Dj.</li>
         </ul>
         <p>By clicking "Agree & Continue", you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</p>
     </>
@@ -121,7 +121,7 @@ const WelcomeScreen = ({ onAgree, onShowTerms, onShowPrivacy }: { onAgree: () =>
     return (
         <div className="welcome-container">
             <div className="welcome-box">
-                <h1>Welcome to AI DJ Mixer</h1>
+                <h1>Welcome to AI Mix Dj</h1>
                 <p>Your personal, automated DJ. Enjoy seamless mixes from your own music library.</p>
                 
                 <div className="how-to-use">
@@ -141,7 +141,7 @@ const WelcomeScreen = ({ onAgree, onShowTerms, onShowPrivacy }: { onAgree: () =>
                         I have read and agree to the <a onClick={onShowTerms}>Terms of Service</a> and <a onClick={onShowPrivacy}>Privacy Policy</a>.
                     </label>
                     <button onClick={onAgree} disabled={!isChecked}>
-                        Enter AI DJ Mixer
+                        Enter AI Mix Dj
                     </button>
                 </div>
             </div>
